@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Products | HitayU Exim</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f5f8fc;
+}
+
+/*========== NAVBAR ==========*/
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(11,60,93,.92);
+backdrop-filter:blur(10px);
+z-index:999;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo img{
+width:70px;
+}
+
+.logo h2{
+color:white;
+font-size:28px;
+}
+
+.logo span{
+color:#ff9800;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:35px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-size:17px;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#ff9800;
+}
+
+.menu{
+display:none;
+font-size:34px;
+color:white;
+cursor:pointer;
+}
+
+/*========== HERO ==========*/
+
+.hero{
+
+height:55vh;
+
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1600");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+margin-top:90px;
+
+text-align:center;
+color:white;
+
+}
+
+.hero h1{
+font-size:60px;
+}
+
+.hero p{
+font-size:22px;
+margin-top:15px;
+}
+
+/*========== PRODUCTS ==========*/
+
+.products{
+
+padding:90px 8%;
+
+}
+
+.title{
+
+text-align:center;
+margin-bottom:60px;
+
+}
+
+.title h4{
+
+color:#ff9800;
+letter-spacing:2px;
+
+}
+
+.title h2{
+
+font-size:45px;
+color:#0B3C5D;
+margin-top:10px;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+.card{
+
+background:white;
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:0 15px 30px rgba(0,0,0,.08);
+
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.card img{
+
+width:100%;
+height:220px;
+object-fit:cover;
+
+}
+
+.content{
+
+padding:25px;
+
+}
+
+.content h3{
+
+color:#0B3C5D;
+margin-bottom:15px;
+
+}
+
+.content p{
+
+color:#666;
+line-height:1.8;
+
+}
+
+.btn{
+
+display:inline-block;
+
+margin-top:20px;
+
+padding:12px 25px;
+
+background:#ff9800;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:30px;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+background:#0B3C5D;
+
+}
+/*================ FOOTER ================*/
+
+footer{
+
+background:#0B3C5D;
+color:white;
+padding:70px 8% 20px;
+
+}
+
+.footer-container{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+
+}
+
+.footer-logo{
+
+width:70px;
+margin-bottom:15px;
+
+}
+
+.footer-box h2{
+
+font-size:28px;
+margin-bottom:15px;
+
+}
+
+.footer-box span{
+
+color:#ff9800;
+
+}
+
+.footer-box h3{
+
+margin-bottom:20px;
+color:#ff9800;
+
+}
+
+.footer-box p{
+
+line-height:1.8;
+color:#ddd;
+margin-bottom:10px;
+
+}
+
+.footer-box ul{
+
+list-style:none;
+
+}
+
+.footer-box ul li{
+
+margin:12px 0;
+color:#ddd;
+
+}
+
+.footer-box ul li a{
+
+color:#ddd;
+text-decoration:none;
+transition:.3s;
+
+}
+
+.footer-box ul li a:hover{
+
+color:#ff9800;
+padding-left:8px;
+
+}
+
+.footer-bottom{
+
+margin-top:50px;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,.2);
+text-align:center;
+color:#ccc;
+
+}
+/*========== MOBILE ==========*/
+
+@media(max-width:991px){
+
+.menu{
+display:block;
+}
+
+nav{
+
+position:absolute;
+top:90px;
+left:-100%;
+width:100%;
+background:#0B3C5D;
+transition:.5s;
+
+}
+
+nav.active{
+
+left:0;
+
+}
+
+nav ul{
+
+flex-direction:column;
+padding:20px;
+
+}
+
+nav ul li{
+
+margin:20px 0;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.title h2{
+
+font-size:34px;
+
+}
+
+.footer-container{
+
+grid-template-columns:1fr;
+text-align:center;
+
+}
+
+.footer-logo{
+
+margin:auto auto 20px;
+
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<img src="images/logo.png">
+
+<h2>Hitay<span>U</span> Exim</h2>
+
+</div>
+
+<div class="menu" onclick="menu()">☰</div>
+
+<nav id="nav">
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="services.html">Services</a></li>
+
+<li><a href="products.html">Products</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div>
+
+<h1>Our Products</h1>
+
+<p>Premium Indian Stationery & Agricultural Products</p>
+
+</div>
+
+</section>
+
+<section class="products">
+
+<div class="title">
+
+<h4>OUR PRODUCTS</h4>
+
+<h2>Quality Products We Export</h2>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm_Qz0gsBv_9h5UFzoM5UTEWbZy8wxfUdxJnCx_3exZA&s=10">
+
+<div class="content">
+
+<h3>A4 Printing Paper</h3>
+
+<p>Premium quality A4 printing paper suitable for offices, schools and commercial printing.</p>
+
+<a href="#" class="btn">Read More</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjMBDxgDPLU7_QskQavVlf_MB_tdTwWq4b7v21ib3CXQ&s=10">
+
+<div class="content">
+
+<h3>Tissue Paper</h3>
+
+<p>Soft, hygienic and customized tissue paper products for domestic and international markets.</p>
+
+<a href="#" class="btn">Read More</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7EP7Wg0_5LHtJymKrgV9NzCpnrhyiXOy6OC6VQuCyJA&s=10">
+
+<div class="content">
+
+<h3>Turmeric Powder</h3>
+
+<p>Natural Indian turmeric powder processed with high quality standards and hygienic packaging.</p>
+
+<a href="#" class="btn">Read More</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0dgo0TvKWdLAIYMj6-uJ9inS3lMYoRoNM8RCv5pafSw&s=10">
+
+<div class="content">
+
+<h3>Red Chilli Powder</h3>
+
+<p>Premium grade Indian red chilli powder with rich color, aroma and authentic taste.</p>
+
+<a href="#" class="btn">Read More</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!--================ FOOTER ================-->
+
+<footer>
+
+<div class="footer-container">
+
+<div class="footer-box">
+
+<img src="images/logo.png" class="footer-logo">
+
+<h2>Hitay<span>U</span> Exim</h2>
+
+<p>
+HitayU Exim is committed to delivering premium Indian products worldwide with trusted export, import and logistics solutions.
+</p>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Quick Links</h3>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="services.html">Services</a></li>
+
+<li><a href="products.html">Products</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Our Services</h3>
+
+<ul>
+
+<li>Export Services</li>
+
+<li>Import Services</li>
+
+<li>Logistics</li>
+
+<li>Custom Clearance</li>
+
+<li>Freight Management</li>
+
+</ul>
+
+</div>
+
+<div class="footer-box">
+
+<h3>Contact Info</h3>
+
+<p>📍 Chhatrapati Sambhajinagar, Maharashtra</p>
+
+<p>📞 +91 98765 43210</p>
+
+<p>📧 info@hitayuexim.com</p>
+
+<p>🌐 www.hitayuexim.com</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>© 2026 HitayU Exim. All Rights Reserved.</p>
+
+</div>
+
+</footer>
+
+<script>
+
+function menu(){
+
+document.getElementById("nav").classList.toggle("active");
+
+}
+
+</script>
+
+</body>
+
+</html>
