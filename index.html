@@ -32,11 +32,11 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-padding:18px 8%;
+padding:28px 9%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:#7c8489d9;
+background:white;
 backdrop-filter:blur(10px);
 z-index:999;
 
@@ -52,17 +52,12 @@ gap:10px;
 
 .logo img{
 
-width:90px;
+width:120px;
+height:auto;
 
 }
 
-.logo h2{
 
-color:white;
-font-size:28px;
-font-weight:700;
-
-}
 
 .logo span{
 
@@ -84,18 +79,19 @@ margin-left:35px;
 }
 
 nav ul li a{
-
-color:white;
-text-decoration:none;
-font-size:17px;
-transition:.4s;
-
+    color:black;
+    text-decoration:none;
+    font-size:17px;
+    transition:.4s;
 }
 
 nav ul li a:hover{
+    color:blue;   /* ya jo pehle tha wahi rehne do */
+}
 
-color:#ff9800;
-
+/* Sirf active page */
+nav ul li a.active{
+    color:#ff9800;
 }
 
 .menu{
@@ -340,7 +336,7 @@ gap:40px;
 
 .footer-logo{
 
-width:70px;
+width:100px;
 margin-bottom:15px;
 
 }
@@ -505,11 +501,9 @@ margin:auto auto 20px;
 <header>
 
 <div class="logo">
+    <img src="images/logo 2.png" class="logo1" alt="Logo 1">
 
-<img src="images/logo.png">
-
-<h2>Hitay<span>U</span> Exim</h2>
-
+    <img src="images/seclogo.png" class="logo2" alt="Logo 2">
 </div>
 
 <div class="menu" onclick="openMenu()">
@@ -522,14 +516,10 @@ margin:auto auto 20px;
 
 <ul>
 
-<li><a href="index.html">Home</a></li>
-
+<li><a href="index.html" class="active">Home</a></li>
 <li><a href="about.html">About</a></li>
-
 <li><a href="services.html">Services</a></li>
-
 <li><a href="products.html">Products</a></li>
-
 <li><a href="contact.html">Contact</a></li>
 
 </ul>
@@ -621,7 +611,7 @@ We simplify international trade with a strong logistics network, quality assuran
 
 <img src="images/logo.png" class="footer-logo">
 
-<h2>Hitay<span>U</span> Exim</h2>
+
 
 <p>
 HitayU Exim is committed to delivering premium Indian products worldwide with trusted export, import and logistics solutions.
@@ -635,14 +625,10 @@ HitayU Exim is committed to delivering premium Indian products worldwide with tr
 
 <ul>
 
-<li><a href="index.html">Home</a></li>
-
+<li><a href="index.html" class="active">Home</a></li>
 <li><a href="about.html">About</a></li>
-
 <li><a href="services.html">Services</a></li>
-
 <li><a href="products.html">Products</a></li>
-
 <li><a href="contact.html">Contact</a></li>
 
 </ul>
