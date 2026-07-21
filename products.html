@@ -234,6 +234,61 @@ transition:.3s;
 background:#0B3C5D;
 
 }
+
+.more-text{
+    display:none;
+    margin-top:15px;
+    color:#666;
+    line-height:1.8;
+}
+
+.more-text.show{
+    display:block;
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.6);
+    z-index:1000;
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-content{
+    background:#fff;
+    width:90%;
+    max-width:700px;
+    max-height:80vh;
+    overflow-y:auto;
+    padding:30px;
+    border-radius:15px;
+    position:relative;
+}
+
+.modal-content h2{
+    color:#0B3C5D;
+    margin-bottom:20px;
+}
+
+.modal-content p{
+    color:#555;
+    line-height:1.9;
+    margin-bottom:15px;
+}
+
+.close{
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:30px;
+    cursor:pointer;
+    color:#333;
+}
 /*================ FOOTER ================*/
 
 footer{
@@ -452,7 +507,10 @@ margin:auto auto 20px;
 
 <p>Premium quality A4 printing paper suitable for offices, schools and commercial printing.</p>
 
-<a href="#" class="btn">Read More</a>
+<a href="javascript:void(0)" class="btn"
+onclick="openModal('A4 Printing Paper','Experience smooth, jam-free performance with our premium A4 paper. Engineered for crisp, double-sided printing, this 70 GSM to 80 GSM bright white paper is the ideal choice for corporate reports, school assignments, and everyday documents. Elevate your business communications with premium customized A4 printing paper.')">
+Read More
+</a>
 
 </div>
 
@@ -468,7 +526,10 @@ margin:auto auto 20px;
 
 <p>Soft, hygienic and customized tissue paper products for domestic and international markets.</p>
 
-<a href="#" class="btn">Read More</a>
+<a href="javascript:void(0)" class="btn"
+onclick="openModal('Tissue Paper','Experience the perfect balance of softness, strength, and sustainability. Our premium tissue papers are crafted for everyday comfort and are suitable for homes, hotels, restaurants, and commercial use.')">
+Read More
+</a>
 
 </div>
 
@@ -484,7 +545,10 @@ margin:auto auto 20px;
 
 <p>Natural Indian turmeric powder processed with high quality standards and hygienic packaging.</p>
 
-<a href="#" class="btn">Read More</a>
+<a href="javascript:void(0)" class="btn"
+onclick="openModal('Turmeric Powder','Enhance your daily cooking and wellness routine with our 100% pure premium-grade Turmeric Powder. Sourced from the finest farms with high curcumin content and hygienically packed for export quality.')">
+Read More
+</a>
 
 </div>
 
@@ -500,7 +564,10 @@ margin:auto auto 20px;
 
 <p>Premium grade Indian red chilli powder with rich color, aroma and authentic taste.</p>
 
-<a href="#" class="btn">Read More</a>
+<a href="javascript:void(0)" class="btn"
+onclick="openModal('Red Chilli Powder','Bring your dishes to life with our premium Red Chilli Powder. Made from hand-picked sun-dried chilies, it delivers vibrant color, rich aroma, and authentic taste.')">
+Read More
+</a>
 
 </div>
 
@@ -572,11 +639,16 @@ HitayU Exim is committed to delivering premium Indian products worldwide with tr
 
 <h3>Contact Info</h3>
 
-<p>📍 Chhatrapati Sambhajinagar, Maharashtra</p>
+<p>📍 Reg. Office:
+5/5/97, Laxmi-Bhuvan,
+Near Sant Eknath Rang Mandir,
+New Osmanpura,
+Chhatrapati Sambhajinagar (Aurangabad),
+Maharashtra - 431005</p>
 
-<p>📞 +91 98765 43210</p>
+<p>📞 +919822457377 </p>
 
-<p>📧 info@hitayuexim.com</p>
+<p>📧 info@hitayuexim.in</p>
 
 <p>🌐 www.hitayuexim.in</p>
 
@@ -592,6 +664,17 @@ HitayU Exim is committed to delivering premium Indian products worldwide with tr
 
 </footer>
 
+<div class="modal" id="productModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h2 id="modalTitle"></h2>
+
+        <p id="modalDescription"></p>
+
+    </div>
+</div>
+
 <script>
 
 function menu(){
@@ -600,6 +683,28 @@ document.getElementById("nav").classList.toggle("active");
 
 }
 
+</script>
+
+<script>
+function menu(){
+    document.getElementById("nav").classList.toggle("active");
+}
+
+function openModal(title, description){
+    document.getElementById("modalTitle").innerText = title;
+    document.getElementById("modalDescription").innerText = description;
+    document.getElementById("productModal").style.display = "flex";
+}
+
+function closeModal(){
+    document.getElementById("productModal").style.display = "none";
+}
+
+window.onclick = function(e){
+    if(e.target == document.getElementById("productModal")){
+        closeModal();
+    }
+}
 </script>
 
 </body>

@@ -197,6 +197,22 @@ button:hover{
 background:#0B3C5D;
 }
 
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.form-group label{
+    font-weight:600;
+    color:#0B3C5D;
+}
+
+.required{
+    color:red;
+}
+
 /*================ MAP ================*/
 
 .map{
@@ -429,21 +445,22 @@ Maharashtra - 431005
 
 <form>
 
-<div class="row">
+    <div class="row">
+        <input type="text" placeholder="First Name *" required>
+        <input type="text" placeholder="Last Name *" required>
+    </div>
 
-<input type="text" placeholder="First Name *" required>
+    <input type="text" placeholder="Company Name *" required>
 
-<input type="text" placeholder="Last Name *" required>
+    <input type="text" placeholder="Origin / Country *" required>
 
-</div>
+    <input type="email" placeholder="Email ID *" required>
 
-<input type="email" placeholder="Email ID" required>
+    <input type="tel" placeholder="Contact Number *" pattern="[0-9]{10}" required>
 
-<input type="tel" placeholder="Contact Number *" pattern="[0-9]{10}" required>
+    <textarea placeholder="Your Message *" required></textarea>
 
-<textarea placeholder="Your Message *" required></textarea>
-
-<button type="submit">Send Inquiry</button>
+    <button type="submit">Send Inquiry</button>
 
 </form>
 
@@ -522,11 +539,16 @@ HitayU Exim is committed to delivering premium Indian products worldwide with tr
 
 <h3>Contact Info</h3>
 
-<p>📍 Chhatrapati Sambhajinagar, Maharashtra</p>
+<p>📍 Reg. Office:
+5/5/97, Laxmi-Bhuvan,
+Near Sant Eknath Rang Mandir,
+New Osmanpura,
+Chhatrapati Sambhajinagar (Aurangabad),
+Maharashtra - 431005</p>
 
-<p>📞 +91 98765 43210</p>
+<p>📞 +919822457377 </p>
 
-<p>📧 info@hitayuexim.com</p>
+<p>📧 info@hitayuexim.in</p>
 
 <p>🌐 www.hitayuexim.in</p>
 
